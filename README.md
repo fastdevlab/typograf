@@ -10,7 +10,7 @@
 
 Код адаптирован под API TinyMCE 6 и прошел проверку синтаксиса JavaScript.
 
-Полная проверка в браузере и MODX пока не завершена. Перед использованием на рабочем сайте проверьте плагин на тестовой копии и сохраните исходный текст.
+Прощел проверку в браузере и MODX 3.2.4.
 
 Совместимость с другими основными версиями TinyMCE отдельно не подтверждена.
 
@@ -32,14 +32,14 @@
 
 ```text
 typograf/
-├── plugin.js
+├── plugin.min.js
 ├── dist/
 │   ├── typograf.all.min.js
 │   └── typograf.css
 └── langs/
 ```
 
-`plugin.js` содержит адаптацию для TinyMCE 6.
+`plugin.min.js` содержит адаптацию для TinyMCE 6.
 
 Папки `dist` и `langs` используются из исходного проекта. Не удаляйте другие файлы, находящиеся внутри них.
 
@@ -65,7 +65,7 @@ tinymce.init({
     selector: 'textarea',
 
     external_plugins: {
-        typograf: '/assets/editor/tinymce/plugins/typograf/plugin.js'
+        typograf: '/assets/editor/tinymce/plugins/typograf/plugin.min.js'
     },
 
     toolbar: 'undo redo | bold italic | typograf'
@@ -80,7 +80,7 @@ tinymce.init({
 
 ```js
 external_plugins: {
-    typograf: '/site/assets/editor/tinymce/plugins/typograf/plugin.js'
+    typograf: '/site/assets/editor/tinymce/plugins/typograf/plugin.min.js'
 }
 ```
 
@@ -189,7 +189,7 @@ tinymce.init({
 ```json
 {
     "external_plugins": {
-        "typograf": "/assets/editor/tinymce/plugins/typograf/plugin.js"
+        "typograf": "/assets/editor/tinymce/plugins/typograf/plugin.min.js"
     },
     "typograf": {
         "locale": ["ru", "en-US"],
@@ -278,7 +278,7 @@ typograf: {
 
 ### Ошибка инициализации плагина
 
-Проверьте, что загружается адаптированный `plugin.js`, а не старая копия.
+Проверьте, что загружается адаптированный `plugin.min.js`, а не старая копия.
 
 Посмотрите фактический URL в Network и сообщение в консоли браузера.
 
@@ -290,7 +290,7 @@ typograf: {
 typograf/dist/typograf.all.min.js
 ```
 
-Каталог `dist` должен находиться рядом с новым `plugin.js`.
+Каталог `dist` должен находиться рядом с новым `plugin.min.js`.
 
 ### Кнопка есть, но обработка недоступна
 
